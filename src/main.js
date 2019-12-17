@@ -19,7 +19,12 @@ const router = new VueRouter(RouterConfig);
 router.beforeEach((to, from, next) => {
     ViewUI.LoadingBar.start();
     Util.title(to.meta.title);
-    next();
+    // if(localStorage.getItem('token')) {
+    //     next('/login')
+    // } else {
+        // next();
+        next();
+    // }
 });
 
 router.afterEach((to, from, next) => {
